@@ -24,74 +24,12 @@ typedef struct {
     int id_departamento;
 } Funcionario;
 
-/* Protótipos das funções
-void cadastrarDepartamento();
-void cadastrarFuncionario();
-void listarDepartamentos();
-void listarFuncionariosPorDepartamento();
-void buscarFuncionarioPorID();
-void removerFuncionario();
-void salvarDepartamentos();
-void carregarDepartamentos();
-void salvarFuncionarios();
-void carregarFuncionarios();
-*/
-
 // Vetores para armazenar dados em memória
 Departamento departamentos[100];
 Funcionario funcionarios[100];
 int numDepartamentos = 0;
 int numFuncionarios = 0;
 
-int main() {
-    carregarDepartamentos();
-    carregarFuncionarios();
-    int opcao;
-
-    do {
-        printf("\nMenu do Programa:\n");
-        printf("1. Cadastrar departamento\n");
-        printf("2. Cadastrar funcionário\n");
-        printf("3. Listar departamentos\n");
-        printf("4. Listar funcionários de um departamento\n");
-        printf("5. Buscar funcionário por ID\n");
-        printf("6. Remover funcionário\n");
-        printf("7. Sair\n");
-        printf("Escolha uma opção: ");
-        scanf("%d", &opcao);
-
-        switch (opcao) {
-            case 1:
-                cadastrarDepartamento();
-                break;
-            case 2:
-                cadastrarFuncionario();
-                break;
-            case 3:
-                listarDepartamentos();
-                break;
-            case 4:
-                listarFuncionariosPorDepartamento();
-                break;
-            case 5:
-                buscarFuncionarioPorID();
-                break;
-            case 6:
-                removerFuncionario();
-                break;
-            case 7:
-                salvarDepartamentos();
-                salvarFuncionarios();
-                printf("Encerrando o programa.\n");
-                break;
-            default:
-                printf("Opção inválida! Tente novamente.\n");
-                break;
-        }
-    } while (opcao != 7);
-
-    return 0;
-}
 
 void cadastrarDepartamento() {
     if (numDepartamentos >= 100) {
@@ -227,4 +165,54 @@ void carregarFuncionarios() {
     }
     numFuncionarios = fread(funcionarios, sizeof(Funcionario), 100, file);
     fclose(file);
+}
+
+int main() {
+    carregarDepartamentos();
+    carregarFuncionarios();
+    int opcao;
+
+    do {
+        printf("\nMenu do Programa:\n");
+        printf("1. Cadastrar departamento\n");
+        printf("2. Cadastrar funcionário\n");
+        printf("3. Listar departamentos\n");
+        printf("4. Listar funcionários de um departamento\n");
+        printf("5. Buscar funcionário por ID\n");
+        printf("6. Remover funcionário\n");
+        printf("7. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                cadastrarDepartamento();
+                break;
+            case 2:
+                cadastrarFuncionario();
+                break;
+            case 3:
+                listarDepartamentos();
+                break;
+            case 4:
+                listarFuncionariosPorDepartamento();
+                break;
+            case 5:
+                buscarFuncionarioPorID();
+                break;
+            case 6:
+                removerFuncionario();
+                break;
+            case 7:
+                salvarDepartamentos();
+                salvarFuncionarios();
+                printf("Encerrando o programa.\n");
+                break;
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+                break;
+        }
+    } while (opcao != 7);
+
+    return 0;
 }
