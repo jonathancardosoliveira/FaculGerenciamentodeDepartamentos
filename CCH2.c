@@ -2,6 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*TO-DO
+
+- quando digitar um departamento que não existe , deve infromar 
+- Adicionar system clears e system pause
+- Editar prints de confirmação (Exemplo: Funcionario adicionado com sucesso)
+- talvez adicionar tabela asc para acentos da lingua portuguesa
+
+*/
+
 // Definição das estruturas
 typedef struct {
     int id;
@@ -15,7 +24,7 @@ typedef struct {
     int id_departamento;
 } Funcionario;
 
-// Protótipos das funções
+/* Protótipos das funções
 void cadastrarDepartamento();
 void cadastrarFuncionario();
 void listarDepartamentos();
@@ -26,6 +35,7 @@ void salvarDepartamentos();
 void carregarDepartamentos();
 void salvarFuncionarios();
 void carregarFuncionarios();
+*/
 
 // Vetores para armazenar dados em memória
 Departamento departamentos[100];
